@@ -1,46 +1,35 @@
 #include <iostream>
 #include <string>
 using namespace std;
-  class encode{
-    string input;
+  class Gear {
+    string gName;
+    string gType;
+    string gLevel;
 
     public:
-      encode(string sinput){
-        input = sinput;
-
-
-      }
-      string compress(){
-        string output = "";
-        char cchar = input[0];
-        int cnum = 0;
-        for (int i = 0; i < input.length(); i++){
-          if(cchar == input[i]){
-            cnum = cnum + 1;
-          }
-
-          
-          if(cnum > 1 && cchar != input[i+1]){
-            output = output + cnum + cchar;
-          }
-          else{
-            output = output + cchar;
-          }
-
-          cchar = input[i];
-
+      Gear(string name, string type, string level){
+        gName = name;
+        gType = type;
+        gLevel = level;
         }
-        return output;
-      }
+  }
+  class player {
     private:
+      int lvl;
+      Gear equipment;
+      int health;
+      int damage;
+      int armor;
+      int inventory;
+    public:
+      player(int level = 1,string name = "wfogame", Gear gear){
+        lvl = level;
+        equipment = gear;
+        health = lvl;
+        damage = lvl;
+        armor = lvl;
+        inventory= lvl;
 
-      
-
+      }
   };
 
-  int main(void){
-    string teststring;
-    std::cin >> teststring;
-    std::cout << encode(teststring);
-    
-  }
