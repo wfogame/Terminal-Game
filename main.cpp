@@ -1,18 +1,19 @@
 #include <iostream>
 #include <string>
 using namespace std;
+enum GearLevel { DEMON, GOD };
   class Gear {
     string gName;
     string gType;
-    string gLevel;
+    GearLevel gLevel;
 
     public:
-      Gear(string name, string type, string level){
+      Gear(string name, string type,GearLevel level){
         gName = name;
         gType = type;
         gLevel = level;
         }
-  }
+  };
   class player {
     private:
       int lvl;
